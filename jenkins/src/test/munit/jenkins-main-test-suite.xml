@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:munit="http://www.mulesoft.org/schema/mule/munit" xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xsi:schemaLocation="
+		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd">
+	<munit:config name="jenkins-main-test-suite.xml" />
+	<munit:test name="jenkins-main-test-suite-jenkins-UpsertFlowTest" doc:id="049b8b37-31f8-43c5-9999-925ae9f2a76d" description="Test">
+		<munit:execution >
+			<munit:set-event doc:name="Set Event" doc:id="d323f1d0-cf42-4866-abc6-8d2085ce5f11" >
+				<munit:payload value='#[{&#10;    "Id": "a0d5j000000rJ1AAAU"&#10;}]' />
+			</munit:set-event>
+			<flow-ref doc:name="Flow-ref to jenkins-UpsertFlow" doc:id="f34614c6-28bb-4944-9e6c-22fa0e6fb5b7" name="jenkins-UpsertFlow"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:assert-that doc:name="Assert that" doc:id="e8435e1f-2a04-4c71-8474-02b4bf5be7bb" is="#[MunitTools::notNullValue()]" expression="#[payload]"/>
+		</munit:validation>
+	</munit:test>
+	<munit:test name="jenkins-main-test-suite-jenkins-main-getFlowTest" doc:id="9d4bc51c-45f8-4e7a-8c41-859f7eec9c4b" description="Test">
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to jenkins-main-getFlow" doc:id="4c9f0c6f-b3e8-41fb-a368-9478275a9070" name="jenkins-main-getFlow"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:assert-that doc:name="Assert that" doc:id="2ed1c296-3c27-4b89-88a8-77e24af9b58c" is="#[MunitTools::notNullValue()]" expression="#[payload]" />
+		</munit:validation>
+	</munit:test>
+
+
+</mule>

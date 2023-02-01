@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:api-gateway="http://www.mulesoft.org/schema/mule/api-gateway" xmlns:salesforce="http://www.mulesoft.org/schema/mule/salesforce"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/salesforce http://www.mulesoft.org/schema/mule/salesforce/current/mule-salesforce.xsd
+http://www.mulesoft.org/schema/mule/api-gateway http://www.mulesoft.org/schema/mule/api-gateway/current/mule-api-gateway.xsd">
+	<salesforce:sfdc-config name="Salesforce_Config" doc:name="Salesforce Config" doc:id="02fc49d2-3b09-4d1c-b95d-527e88470083" >
+		<salesforce:basic-connection username="eniquehrms@gmail.com" password="project1234" securityToken="2KgagGh0VbFJK7mgHlq3bQmB"/>
+	</salesforce:sfdc-config>
+	<api-gateway:autodiscovery apiId="18464770" ignoreBasePath="true" doc:name="API Autodiscovery" doc:id="2ac7e940-7524-4c93-81c8-d03dd046c36d" flowRef="jenkins-console" />
+</mule>
