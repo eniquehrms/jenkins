@@ -8,5 +8,4 @@ http://www.mulesoft.org/schema/mule/api-gateway http://www.mulesoft.org/schema/m
 	<salesforce:sfdc-config name="Salesforce_Config" doc:name="Salesforce Config" doc:id="02fc49d2-3b09-4d1c-b95d-527e88470083" >
 		<salesforce:basic-connection username="eniquehrms@gmail.com" password="project1234" securityToken="2KgagGh0VbFJK7mgHlq3bQmB"/>
 	</salesforce:sfdc-config>
-	<api-gateway:autodiscovery apiId="18467083" ignoreBasePath="true" doc:name="API Autodiscovery" doc:id="2ac7e940-7524-4c93-81c8-d03dd046c36d" flowRef="jenkins-main" />
 </mule>
